@@ -49,7 +49,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - Make sure you're `export`ing what's needed in `index.ts`.
       - For `Todo` from the `data` library:
         ```
-        interface Todo {
+        export interface Todo {
           title: string;
         }
         ```
@@ -57,8 +57,24 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   - The internal North Loop network likes to block access to `.dev` sites. If you connect to the VPN, however, you *can* access them. Since working on the VPN while in the office is a suboptimal state, I logged on briefly, opened all the steps, and then logged off.
   - Unrelated to this particular tutorial, but worth nothing: Mark discovered that including a digit in a component name makes Angular quite unhappy - though it isn't quite able to articulate what has displeased it.
 - [Getting Started](https://nx.dev/getting-started/getting-started)
+  - Install Angular CLI
+    - `npm install -g @angular/cli`
+  - Create an Nx workspace
+    - `npx`
+      - `npx create-nx-workspace myworkspace`
+    - `npm`
+      - `npm init nx-workspace myworkspace`
+    - `yarn`
+      - `yarn create nx-workspace myworkspace`
+  - Add NX to an existing Angular CLI project
+    - `ng add @nrwl/schematics`
+  - Create Nx application
+    - `ng g application myapp`
+  - Serve application
+    - `ng serve myapp`
+  - Note `Angular Console` VSCode extension
 - [Step 1: Create Application](https://nx.dev/tutorial/01-create-application)
-  - Create a `myorg`` workspace
+  - Create a `myorg` workspace
     - `npx create-nx-workspace myorg`
   - Create an `app` Angular application
     - `ng g app todos`
@@ -88,9 +104,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Step 7: Share Code](https://nx.dev/tutorial/07-share-code)
   - Create `data` library
     - `ng g lib data`
+  - See the notes in **Misc** if you encounter errors related to `data` not being a module.
 - [Step 8: Create Libraries](https://nx.dev/tutorial/08-create-libs)
   - Create `ui` library
     - `ng g lib ui`
   - Add a component to `ui` library
     - `ng g component todos --project=ui --export`
-  - 
+  - See the notes in **Misc** if you encounter errors related to `ui` not being a module.
+- [Step 9: Dep Graph](https://nx.dev/tutorial/09-dep-graph)
+  - View a dependency graph in a browser window
+    - `npm run dep-graph`
