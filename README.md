@@ -39,3 +39,13 @@ Run `ng e2e` to execute the end-to-end tests via [Cypress](http://www.protractor
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Eric's Notes
+- Step 6
+  - I had to delete the extra `/` from `"proxyConfig": "apps/todos//proxy.conf.json"` in `angular.json`.
+  - Run todos: `ng serve todos` -> [http://localhost:4200/](http://localhost:4200/)
+    - This didn't behave well when I had set the port to `4201` while running `e2e` tests on `4200`.
+  - Run api: `ng serve api` -> [http://localhost:3333/api/todos]
+- Step 7
+  - 
