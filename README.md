@@ -42,10 +42,44 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Eric's Notes
-- Step 6
+- General
+  - When dealing with prompts (such as after `npx create-nx-workspace myorg`), `Enter` selects the default option (even when no options are presented).
+  - `npm install`
+- Step 1: Create Application
+  - Create a new workspace
+    - `npx create-nx-workspace myorg`
+  - Create an Angular application
+    - `ng g app todos`
+  - Serve the `todos` application
+    - `ng serve todos`
+- Step 2: Add E2E Test
+  - Run E2E tests
+    - `ng e2e todos-e2e --watch`
+- Step 3: Display Todos
+    - `ng e2e todos-e2e --headless`
+- Step 4: Connect to API
+  - 
+- Step 5: Add Node Application
+  - Generate a new Node appplication associated with the `todos` app
+    - `ng g node-app api --frontendProject=todos`
+  - Serve application
+    - `ng serve api`
+  - Build application
+    - `ng build api`
+  - Test application
+    - `ng test api`
   - I had to delete the extra `/` from `"proxyConfig": "apps/todos//proxy.conf.json"` in `angular.json`.
   - Run todos: `ng serve todos` -> [http://localhost:4200/](http://localhost:4200/)
     - This didn't behave well when I had set the port to `4201` while running `e2e` tests on `4200`.
   - Run api: `ng serve api` -> [http://localhost:3333/api/todos]
+- Step 6
 - Step 7
-  - 
+  - Create a library
+    - `ng g lib data`
+  - If you get an error about `@myorg/data` not being a module, make sure to add an `export` in front of the `interface`:
+    ```
+    interface Todo {
+      title: string;
+    }
+    ```
+- 
