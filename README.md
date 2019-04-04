@@ -42,44 +42,55 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Eric's Notes
-- General
+- Misc
   - When dealing with prompts (such as after `npx create-nx-workspace myorg`), `Enter` selects the default option (even when no options are presented).
-  - `npm install`
-- Step 1: Create Application
-  - Create a new workspace
+  - Remember to run `npm install`
+  - If you get an error about `@myorg/data` or `@myorg/ui` not being a module:
+    - Make sure you're `export`ing what's needed in `index.ts`.
+      - For `Todo` from the `data` library:
+        ```
+        interface Todo {
+          title: string;
+        }
+        ```
+    - If you continue to get the same error, try restarting your IDE.
+  - The internal North Loop network likes to block access to `.dev` sites. If you connect to the VPN, however, you *can* access them. Since working on the VPN while in the office is a suboptimal state, I logged on briefly, opened all the steps, and then logged off.
+  - Unrelated to this particular tutorial, but worth nothing: Mark discovered that including a digit in a component name makes Angular quite unhappy - though it isn't quite able to articulate what has displeased it.
+- [Getting Started](https://nx.dev/getting-started/getting-started)
+- [Step 1: Create Application](https://nx.dev/tutorial/01-create-application)
+  - Create a `myorg`` workspace
     - `npx create-nx-workspace myorg`
-  - Create an Angular application
+  - Create an `app` Angular application
     - `ng g app todos`
   - Serve the `todos` application
     - `ng serve todos`
-- Step 2: Add E2E Test
-  - Run E2E tests
+- [Step 2: Add E2E Test](https://nx.dev/tutorial/02-add-e2e-test)
+  - Run `todos-e2e` E2E tests
     - `ng e2e todos-e2e --watch`
-- Step 3: Display Todos
-    - `ng e2e todos-e2e --headless`
-- Step 4: Connect to API
-  - 
-- Step 5: Add Node Application
+- [Step 3: Display Todos](https://nx.dev/tutorial/03-display-todos)
+    - Run `todos-e2e` E2E tests, in headless mode
+      - `ng e2e todos-e2e --headless`
+- [Step 4: Connect to API](https://nx.dev/tutorial/04-connect-to-api)
+- [Step 5: Add Node Application](https://nx.dev/tutorial/05-add-node-app)
   - Generate a new Node appplication associated with the `todos` app
     - `ng g node-app api --frontendProject=todos`
-  - Serve application
+  - Serve `api` application
     - `ng serve api`
-  - Build application
+  - Build `api` application
     - `ng build api`
-  - Test application
+  - Test `api` application
     - `ng test api`
   - I had to delete the extra `/` from `"proxyConfig": "apps/todos//proxy.conf.json"` in `angular.json`.
   - Run todos: `ng serve todos` -> [http://localhost:4200/](http://localhost:4200/)
     - This didn't behave well when I had set the port to `4201` while running `e2e` tests on `4200`.
-  - Run api: `ng serve api` -> [http://localhost:3333/api/todos]
-- Step 6
-- Step 7
-  - Create a library
+  - Run api: `ng serve api` -> [http://localhost:3333/api/todos](http://localhost:3333/api/todos)
+- [Step 6: Configure Proxy](https://nx.dev/tutorial/06-proxy)
+- [Step 7: Share Code](https://nx.dev/tutorial/07-share-code)
+  - Create `data` library
     - `ng g lib data`
-  - If you get an error about `@myorg/data` not being a module, make sure to add an `export` in front of the `interface`:
-    ```
-    interface Todo {
-      title: string;
-    }
-    ```
-- 
+- [Step 8: Create Libraries](https://nx.dev/tutorial/08-create-libs)
+  - Create `ui` library
+    - `ng g lib ui`
+  - Add a component to `ui` library
+    - `ng g component todos --project=ui --export`
+  - 
