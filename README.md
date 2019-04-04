@@ -114,3 +114,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Step 9: Dep Graph](https://nx.dev/tutorial/09-dep-graph)
   - View a dependency graph in a browser window
     - `npm run dep-graph`
+- [Step 10: Test Affected Projects](https://nx.dev/tutorial/10-test-affected-projects)
+  - Print (to console) which apps have changed (compared to `base`, here set to `master`)
+    - `npm run affected:apps -- --base=master`
+  - Print (to console) which libraries have changed (compared to `base`, here set to `master`)
+    - `npm run affected:libs -- --base=master`
+  - Test all affected projects
+    - `npm run affected:test -- --base=master`
+  - Retest all affected projects, only rerunning tests for a project that failed
+    - `npm run affected:test -- --base=master --only-failed`
+  - Test all projects in parallel
+    - `npm run affected:test -- --base=master --parallel`
+- Step 11: Build Affected Projects
+- Step 12: Summary
