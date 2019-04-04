@@ -125,5 +125,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - `npm run affected:test -- --base=master --only-failed`
   - Test all projects in parallel
     - `npm run affected:test -- --base=master --parallel`
-- Step 11: Build Affected Projects
-- Step 12: Summary
+- [Step 11: Build Affected Projects](https://nx.dev/tutorial/11-build-affected-projects)
+  - `npm run affected:build -- --base=master`
+  - `npm run affected -- --target=build --base=master`
+- [Step 12: Summary](https://nx.dev/tutorial/12-summary)
