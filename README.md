@@ -54,7 +54,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
         }
         ```
     - If you continue to get the same error, try restarting your IDE.
-  - The internal North Loop network likes to block access to `.dev` sites. If you connect to the VPN, however, you *can* access them. Since working on the VPN while in the office is a suboptimal state, I logged on briefly, opened all the steps, and then logged off.
+  - The internal North Loop network likes to block access to `.dev` sites. If you connect to the VPN, however, you *can* access them. (Thanks for Mark for discovering this.) Since working on the VPN while in the office is a suboptimal state, I logged on briefly, opened all the steps, and then logged off.
   - Unrelated to this particular tutorial, but worth nothing: Mark discovered that including a digit in a component name makes Angular quite unhappy - though it isn't quite able to articulate what has displeased it.
 - [Getting Started](https://nx.dev/getting-started/getting-started)
   - Install Angular CLI
@@ -66,7 +66,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       - `npm init nx-workspace myworkspace`
     - `yarn`
       - `yarn create nx-workspace myworkspace`
-  - Add NX to an existing Angular CLI project
+  - Add Nx to an existing Angular CLI project
     - `ng add @nrwl/schematics`
   - Create Nx application
     - `ng g application myapp`
